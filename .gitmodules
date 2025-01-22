@@ -1,0 +1,3 @@
+[submodule "docker_tutorial/todo-list-app"]
+	path = docker_tutorial/todo-list-app
+	url = https://github.com/dockersamples/todo-list-app
