@@ -76,5 +76,5 @@ app.get('/get-profile', function (req, res) {
 });
 
 app.listen(3000, function () {
-  console.log("app listening on port 5500!");
+  console.log("app listening on port 3000!");
 });
