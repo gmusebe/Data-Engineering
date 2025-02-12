@@ -1,9 +1,9 @@
 version: '3'
 services:
-  my-app:
-    image: 680712110983.dkr.ecr.us-east-2.amazonaws.com/my-app:1.0
-    ports:
-      - "3000:5500"    
+  # my-app:
+  #   image: 680712110983.dkr.ecr.us-east-2.amazonaws.com/my-app:1.0
+  #   ports:
+  #     - "3000:5500"    
   mongo:
     image: mongo
     ports:
@@ -11,6 +11,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongoadmin
       MONGO_INITDB_ROOT_PASSWORD: secret
+    volumes:
+      - mongo-data:/data/db
   mongo-express:
     image: mongo-express
     ports:
@@ -21,3 +23,6 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongo
       ME_CONFIG_BASICAUTH_USERNAME: username
       ME_CONFIG_BASICAUTH_PASSWORD: password
+volumes:
+  mongo-data:
+    driver: local
